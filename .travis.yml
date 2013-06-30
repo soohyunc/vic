@@ -1,0 +1,12 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+# Change this to your needs
+before-script: 
+    git clone https://github.com/uclmediatools/common.git && cd ../common && ./configure && make
+script: 
+    ./configure && make
+branches:
+  only:
+    - mpeg4

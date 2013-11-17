@@ -29,7 +29,7 @@
 
 .SUFFIXES: .cpp $(.SUFFIXES)
 
-ALL = @V_ALL@ histtolut cc_tools
+ALL = @V_ALL@ histtolut vic cc_tools
 all:	$(ALL)
 
 # Special case for H261 encoder - no optimisation if using linux gcc 2.96

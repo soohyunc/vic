@@ -6,7 +6,7 @@ compiler:
 before-script: 
     - sudo apt-get install rake
 script: 
-    - git clone https://github.com/uclmediatools/common.git && cd ../common && ./configure && make
+    - git clone https://github.com/uclmediatools/common.git && cd ./common && ./configure && make
     - cd ../..
     - git clone https://github.com/uclmediatools/tcl-8.0.git && cd ./tcl-8.0/unix && ./configure && make
     - cd ../..

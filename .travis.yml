@@ -12,7 +12,7 @@ script:
     - cd ../..
     - git clone https://github.com/uclmediatools/tk-8.0.git && cd ./tk-8.0/unix && ./configure && make
     - cd ../..
-    - git clone https://github.com/soohyunc/vic.git && cd ./vic && ./configure --with-tcl=../tcl-8.0/unix --with-tk=../tk-8.0/unix && make
+    - cd ./vic && ./configure --with-tcl=../tcl-8.0/unix --with-tk=../tk-8.0/unix && make
 branches:
   only:
     - mpeg4

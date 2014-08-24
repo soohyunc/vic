@@ -8,6 +8,7 @@ before-script:
     - git clone https://github.com/uclmediatools/common.git && cd ../common && ./configure && make
 script: 
     - git clone https://github.com/uclmediatools/tcl-8.0.git && cd ./tcl-8.0/unix && ./configure && make
+    - cd ../..
     - git clone https://github.com/uclmediatools/tk-8.0.git && cd ./tk-8.0/unix && ./configure && make
     - ./configure --with-tcl=../tcl-8.0/unix --with-tk=../tk-8.0/unix && make
 branches:

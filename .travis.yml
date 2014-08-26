@@ -6,7 +6,7 @@ install:
     - sudo apt-get update -y
     - sudo apt-get install -y aptitude
     - LDFLAGS=-lm sudo aptitude install -y $(< requirements)
-    - sudo aptitude install rake
+    - sudo aptitude install -y rake
 script: 
     - git clone https://github.com/uclmediatools/common.git && cd ./common && ./configure && make
     - cd ../..

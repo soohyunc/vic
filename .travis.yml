@@ -1,10 +1,12 @@
 language: cpp
 compiler:
   - gcc
-  - clang
 # Change this to your needs
-before-script: 
-    - sudo apt-get install rake
+install:
+    - sudo apt-get update -y
+    - sudo apt-get install -y aptitude
+    - LDFLAGS=-lm sudo aptitude install -y $(< requirements)
+    - sudo aptitude install rake
 script: 
     - git clone https://github.com/uclmediatools/common.git && cd ./common && ./configure && make
     - cd ../..
@@ -12,7 +14,10 @@ script:
     - cd ../..
     - git clone https://github.com/uclmediatools/tk-8.0.git && cd ./tk-8.0/unix && ./configure && make
     - cd ../..
-    - cd ./vic && ./configure --with-tcl=../tcl-8.0/unix --with-tk=../tk-8.0/unix && make
+    - cd ./vic && ./configure --with-tcl=../tcl-8.0/unix --with-tk=../tk-8.0/unix
+    - export LDFLAGS= -L../common/src
+    - export INCLUDE_MISC = -I. -Icodec/tmndec -Icodec/tmn-x -Icodec/h263 -Irtp -Irender -Inet -Ivideo -Icodec  -I../common/src
+    - make                                                                                                    
 branches:
   only:
     - mpeg4
